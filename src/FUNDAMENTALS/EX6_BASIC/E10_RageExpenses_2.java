@@ -2,7 +2,7 @@ package FUNDAMENTALS.EX6_BASIC;
 
 import java.util.Scanner;
 
-public class E10_RageExpenses {
+public class E10_RageExpenses_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -13,24 +13,15 @@ public class E10_RageExpenses {
         double displayPrice = Double.parseDouble(scanner.nextLine());
 
         double expenses = 0;
-        int countKeyboard = 0;
 
-        for (int i = 1; i <= lostGamesCount; i++) {
-            if (i % 2 == 0) {
-                expenses += headsetPrice;
-            }
-            if (i % 3 == 0) {
-                expenses += mousePrice;
-            }
-            if (i % 6 == 0) {
-                expenses += keyboardPrice;
-                countKeyboard++;
+        double headsetExpenses = lostGamesCount / 2 * headsetPrice;
+        double mouseExpenses = lostGamesCount / 3 * mousePrice;
+        double keyboardExpenses = lostGamesCount / 6 * keyboardPrice;
+        double displayExpenses = lostGamesCount / 12 * displayPrice;
 
-                if (countKeyboard % 2 == 0) {
-                    expenses += displayPrice;
-                }
-            }
-        }
+        expenses = headsetExpenses + mouseExpenses + keyboardExpenses + displayExpenses;
+
         System.out.printf("Rage expenses: %.2f lv.", expenses);
+
     }
 }

@@ -8,17 +8,19 @@ public class E05_Login {
 
         String username = scanner.nextLine();
 
-        String password = "";
+        StringBuilder passwordBuilder = new StringBuilder();
 
         for (int i = username.length() - 1; i >= 0; i--) {
-            password += username.charAt(i);
+            passwordBuilder.append(username.charAt(i));
         }
+        String password = passwordBuilder.toString();
+
 
         String line = scanner.nextLine();
 
         for (int i = 0; i < 4; i++) {
 
-            if (line.equals(password)) {
+            if (password.equals(line)) {
                 System.out.printf("User %s logged in.%n", username);
                 break;
 
