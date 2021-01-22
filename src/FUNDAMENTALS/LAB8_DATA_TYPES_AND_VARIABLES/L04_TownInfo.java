@@ -2,7 +2,7 @@ package FUNDAMENTALS.LAB8_DATA_TYPES_AND_VARIABLES;
 
 import java.util.Scanner;
 
-public class L014_TownInfo {
+public class L04_TownInfo {
 
 
     public static void main(String[] args) {
