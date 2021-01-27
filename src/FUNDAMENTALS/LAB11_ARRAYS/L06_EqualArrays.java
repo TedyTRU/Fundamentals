@@ -3,7 +3,7 @@ package FUNDAMENTALS.LAB11_ARRAYS;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class E06_EqualArrays {
+public class L06_EqualArrays {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

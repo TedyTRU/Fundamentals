@@ -3,7 +3,7 @@ package FUNDAMENTALS.LAB11_ARRAYS;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class E07_CondenseArrayToNumber {
+public class L07_CondenseArrayToNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
