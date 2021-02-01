@@ -9,23 +9,26 @@ public class E07_MaxSequenceOfEqualElements {
 
         int[] array = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(e->Integer.parseInt(e)).toArray();
 
-        int count = 1;
+        int count = 0;
         int element = 0;
-        int currentCount = 1;
+        int currentCount = 0;
 
         for (int i = 0; i < array.length - 1; i++) {
 
             if (array[i] == array[i + 1]) {
                 currentCount++;
             } else {
-                currentCount = 1;
+                currentCount = 0;
             }
             if (currentCount > count) {
                 count = currentCount;
                 element = array[i];
             }
         }
-        for (int j = 0; j < count; j++) {
+        if (count == 0) {
+            element = array[0];
+        }
+        for (int j = 0; j < count + 1; j++) {
             System.out.print(element + " ");
         }
     }
