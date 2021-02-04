@@ -22,7 +22,7 @@ public class E09_KaminoFactory_2 {
             int countSequence = 0;
             int bestSequenceForSample = 0;
             int sum = 0;
-            int index = 0;
+            int index = 0; // int index = dnaLength - 1;
 
             countSample++;
 
@@ -73,3 +73,9 @@ public class E09_KaminoFactory_2 {
 
     }
 }
+
+//3
+//        0!0!0
+//        0!0!0
+//        0!0!0
+//        Clone them!
