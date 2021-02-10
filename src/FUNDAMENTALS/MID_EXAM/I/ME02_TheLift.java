@@ -25,6 +25,9 @@ public class ME02_TheLift {
                     lift[i] = 4;
                 }
                 people -= tempPeople;
+
+            } else {
+                break;
             }
         }
 
