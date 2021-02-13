@@ -2,7 +2,7 @@ package FUNDAMENTALS.EX15_METHODS;
 
 import java.util.Scanner;
 
-public class EX10_TopNumber {
+public class E10_TopNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

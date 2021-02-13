@@ -3,7 +3,7 @@ package FUNDAMENTALS.EX15_METHODS;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class EX11_ArrayManipulator {
+public class E11_ArrayManipulator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
