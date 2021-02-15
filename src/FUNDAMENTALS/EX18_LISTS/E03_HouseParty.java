@@ -14,9 +14,9 @@ public class E03_HouseParty {
         while (numOfLines > 0) {
             String[] commands = scanner.nextLine().split("\\s+");
             String name = commands[0];
-            String isOrNot = commands[2];
+            String tokens = commands[2];
 
-           switch (isOrNot) {
+           switch (tokens) {
                case "going!":
                    if (!names.contains(name)) {
                        names.add(name);

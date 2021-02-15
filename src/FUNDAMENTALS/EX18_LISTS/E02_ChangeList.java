@@ -19,7 +19,8 @@ public class E02_ChangeList {
 
             if ("Delete".equals(command)) {
                 while (list.contains(element)) {
-                    list.remove((Object) element);
+                    //list.remove((Object) element);
+                    list.removeAll(Arrays.asList(5));
                 }
 
             } else if ("Insert".equals(command)) {
