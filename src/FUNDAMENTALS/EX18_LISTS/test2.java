@@ -1,15 +1,14 @@
 package FUNDAMENTALS.EX18_LISTS;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class test2 {
     public static void main(String[] args) {
 
-        List<String> data = new ArrayList<>();
-        data.add("abcdef");
-        data.add("ghi");
-        data.add("jkl");
+        List<String> data = new ArrayList<>(Arrays.asList("abcdef", "ghi", "jkl"));
+
 
         int partitions = 3;
         int index = 0;
