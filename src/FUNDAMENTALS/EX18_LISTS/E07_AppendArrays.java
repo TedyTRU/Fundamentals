@@ -23,9 +23,13 @@ public class E07_AppendArrays {
                 //values.add(number);
             }
         }
-        for (String appendArray : appendArrays) {
-            System.out.print(appendArray + " ");
-        }
+
+        String toPrint = appendArrays.toString().replaceAll("[\\]\\[,]", "");
+        System.out.println(toPrint);
+
+//        for (String appendArray : appendArrays) {
+//            System.out.print(appendArray + " ");
+//        }
 
 //        for (Integer value : values) {
 //            System.out.print(value + " ");
