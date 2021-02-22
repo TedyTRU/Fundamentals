@@ -26,6 +26,7 @@ public class Main {
 
         //people.sort(Comparator.comparing(e -> e.getName()));
         people.sort(Comparator.comparing(Person::getName));
+        //people.sort(Comparator.comparing(Person::getName).thenComparing(Person::getAge));
 
         for (Person person : people) {
             System.out.println(person);
