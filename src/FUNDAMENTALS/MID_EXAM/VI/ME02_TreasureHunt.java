@@ -40,16 +40,19 @@ public class ME02_TreasureHunt {
                 int count = Integer.parseInt(lines.split("\\s+")[1]);
                 List<String> stolenItems = new ArrayList<>();
 
-                if (count > treasureChest.size()) {
-                    count = treasureChest.size();
-                }
+                if (count >= treasureChest.size()) {
+                    System.out.println(String.join(", ", treasureChest));
+                    treasureChest.clear();
 
-                for (int i = 0; i < count; i++) {
-                    int index = treasureChest.size() - 1;
-                    stolenItems.add(treasureChest.get(index));
-                    treasureChest.remove(index);
+                } else {
+
+                    for (int i = 0; i < count; i++) {
+                        int index = treasureChest.size() - 1;
+                        stolenItems.add(0, treasureChest.get(index));
+                        treasureChest.remove(index);
+                    }
+                    System.out.println(String.join(", ", stolenItems));
                 }
-                printList(stolenItems);
             }
 
             lines = scanner.nextLine();
@@ -70,15 +73,4 @@ public class ME02_TreasureHunt {
         }
 
     }
-
-    private static void printList(List<String> list) {
-        for (int i = list.size() - 1; i >= 0; i--) {
-            if (i == 0) {
-                System.out.println(list.get(i));
-            } else {
-                System.out.print(list.get(i) + ", ");
-            }
-        }
-    }
-
 }
