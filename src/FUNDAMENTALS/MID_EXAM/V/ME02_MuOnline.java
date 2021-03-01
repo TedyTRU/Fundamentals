@@ -16,9 +16,11 @@ public class ME02_MuOnline {
             int number = Integer.parseInt(room[1]);
 
             if (command.equals("potion")) {
-                health += number;
-                if (health > 100) {
+                if (health + number > 100) {
+                    number = 100 - health;
                     health = 100;
+                } else {
+                    health += number;
                 }
                 System.out.printf("You healed for %d hp.%n", number);
                 System.out.printf("Current health: %d hp.%n", health);
