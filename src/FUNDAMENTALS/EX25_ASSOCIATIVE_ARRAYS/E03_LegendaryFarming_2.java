@@ -2,7 +2,7 @@ package FUNDAMENTALS.EX25_ASSOCIATIVE_ARRAYS;
 
 import java.util.*;
 
-public class E03_LegendaryFarming {
+public class E03_LegendaryFarming_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -54,7 +54,13 @@ public class E03_LegendaryFarming {
         }
 
         keyMat.entrySet().stream()
-                .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
+                .sorted((e1, e2) -> {
+                    int result = e2.getValue().compareTo(e1.getValue());
+                    if (result == 0) {
+                        result = e1.getKey().compareTo(e2.getKey());
+                    }
+                    return result;
+                })
                 .forEach((entry) -> System.out.printf("%s: %d%n", entry.getKey(), entry.getValue()));
         junk.forEach((k, v) -> System.out.printf("%s: %d%n", k, v));
 
