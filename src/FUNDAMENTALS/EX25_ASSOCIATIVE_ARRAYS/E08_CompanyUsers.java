@@ -16,11 +16,20 @@ public class E08_CompanyUsers {
             if (!companies.containsKey(company)) {
                 companies.put(company, new ArrayList<>());
             }
-
+            if (companies.get(company).contains(ID)) {
+                line = scanner.nextLine();
+                continue;
+            }
+            companies.get(company).add(ID);
 
             line = scanner.nextLine();
         }
 
+        companies.entrySet()
+                .forEach((entry) -> {
+                    System.out.println(entry.getKey());
+                    entry.getValue().forEach((e) -> System.out.println("--" + e));
+                });
 
     }
 }
