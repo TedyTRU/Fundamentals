@@ -62,7 +62,15 @@ public class E09_ForceBook {
         if (!forceSides.containsKey(side)) {
             forceSides.put(side, new ArrayList<>());
         }
-        if (!forceSides.get(side).contains(user)) {
+
+        boolean containsUser = false;
+        for (Map.Entry<String, List<String>> entry : forceSides.entrySet()) {
+            if (entry.getValue().contains(user)) {
+                containsUser = true;
+                break;
+            }
+        }
+        if (!containsUser) {
             forceSides.get(side).add(user);
         }
     }
