@@ -13,21 +13,18 @@ public class E04_MorseCodeTranslator {
 
         StringBuilder translatedMessage = new StringBuilder();
 
-        for (int i = 0; i < message.length; i++) {
-            String letter = message[i];
-            char translatedLetter = 65;
-
-            if (letter.equals("|")) {
-                translatedLetter = ' ';
+        for (String s : message) {
+            if (s.equals("|")) {
+                translatedMessage.append(" ");
             } else {
-                for (int j = 0; j < morseCode.length; j++) {
-                    if (letter.equals(morseCode[j])) {
-                        translatedLetter += j;
+                for (int i = 0; i < morseCode.length; i++) {
+                    if (s.equals(morseCode[i])) {
+                        char letter = (char) (i + 65);
+                        translatedMessage.append(letter);
+                        break;
                     }
                 }
             }
-            translatedMessage.append(translatedLetter);
-
         }
 
         System.out.println(translatedMessage.toString());
