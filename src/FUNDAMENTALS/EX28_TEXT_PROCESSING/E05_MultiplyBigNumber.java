@@ -9,6 +9,7 @@ public class E05_MultiplyBigNumber {
 
         BigInteger number = scanner.nextBigInteger();
         BigInteger digit = scanner.nextBigInteger();
+        //BigInteger digit = new BigInteger(scanner.nextLine());
 
         number = number.multiply(digit);
 
