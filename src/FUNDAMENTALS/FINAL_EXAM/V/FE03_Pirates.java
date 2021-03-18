@@ -11,7 +11,7 @@ public class FE03_Pirates {
         Map<String, List<Integer>> cities = new TreeMap<>();
 
         while (!"Sail".equals(line)) {
-            String[] lineOfCities = line.split("\\|+");
+            String[] lineOfCities = line.trim().split("\\|+");
             String city = lineOfCities[0];
             int population = Integer.parseInt(lineOfCities[1]);
             int gold = Integer.parseInt(lineOfCities[2]);
@@ -37,7 +37,7 @@ public class FE03_Pirates {
             if ("Plunder".equals(command)) {
                 String town = line.split("=>")[1];
                 int people = Integer.parseInt(line.split("=>")[2]);
-                int gold = Integer.parseInt(line.split("=>")[3]);
+                int gold = Integer.parseInt(line.trim().split("=>")[3]);
 
                 if (cities.containsKey(town)) {
                     int population = cities.get(town).get(0);
