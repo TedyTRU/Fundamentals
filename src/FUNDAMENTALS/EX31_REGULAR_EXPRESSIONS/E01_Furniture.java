@@ -9,13 +9,13 @@ public class E01_Furniture {
         Scanner scanner = new Scanner(System.in);
 
         String lines = scanner.nextLine();
-        String regex = ">>(?<furniture>[A-Za-z]+)<<(?<price>\\d+[.]*\\d+)!(?<quantity>\\d+)\\b";
+        String regex = ">>(?<furniture>[A-Za-z]+)<<(?<price>\\d+.?\\d*)!(?<quantity>\\d+)\\b";
+        Pattern pattern = Pattern.compile(regex);
         List<String> listOfFurniture = new ArrayList<>();
         double finalPrice = 0.0;
 
 
         while (!"Purchase".equals(lines)) {
-            Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(lines);
 
             if (matcher.find()) {
@@ -35,7 +35,8 @@ public class E01_Furniture {
 
         System.out.println("Bought furniture:");
 
-        System.out.println(String.join("\n", listOfFurniture));
+        //System.out.println(String.join("\n", listOfFurniture));
+        listOfFurniture.forEach(e -> System.out.println(e));
 
         System.out.printf("Total money spend: %.2f", finalPrice);
 
