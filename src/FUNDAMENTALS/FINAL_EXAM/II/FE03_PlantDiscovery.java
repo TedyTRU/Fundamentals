@@ -26,10 +26,12 @@ public class FE03_PlantDiscovery {
             String command = commands.split(":")[0];
             String plant = commands.split(":")[1].split(" - ")[0].trim();
 
-            if ("Rate".equals(command)) {
-                double rating = Double.parseDouble(commands.split(":")[1].split(" - ")[1]);
+            if (!plants.containsKey(plant)) {
+                System.out.println("error");
 
-                if (plants.containsKey(plant)) {
+            } else {
+                if ("Rate".equals(command)) {
+                    double rating = Double.parseDouble(commands.split(":")[1].split(" - ")[1]);
 
                     if (plants.get(plant).get(1) == 0) {
                         plants.get(plant).set(1, rating);
@@ -37,32 +39,18 @@ public class FE03_PlantDiscovery {
                         double currentRating = (plants.get(plant).get(1) + rating) / 2;
                         plants.get(plant).set(1, currentRating);
                     }
-                } else {
-                    System.out.println("error");
-                }
 
-            } else if ("Update".equals(command)) {
-                double rarity = Double.parseDouble(commands.split(":")[1].split(" - ")[1]);
-
-                if (plants.containsKey(plant)) {
+                } else if ("Update".equals(command)) {
+                    double rarity = Double.parseDouble(commands.split(":")[1].split(" - ")[1]);
                     plants.get(plant).set(0, rarity);
-                } else {
-                    System.out.println("error");
-                }
 
-            } else if ("Reset".equals(command)) {
-
-                if (plants.containsKey(plant)) {
+                } else if ("Reset".equals(command)) {
                     plants.get(plant).set(1, 0.0);
+
                 } else {
                     System.out.println("error");
                 }
-
-
-            } else {
-                System.out.println("error");
             }
-
             commands = scanner.nextLine();
         }
         System.out.println("Plants for the exhibition:");
