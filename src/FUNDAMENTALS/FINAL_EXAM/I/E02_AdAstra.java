@@ -32,7 +32,5 @@ public class E02_AdAstra {
         for (String item : food) {
             System.out.println(item);
         }
-
-
     }
 }
